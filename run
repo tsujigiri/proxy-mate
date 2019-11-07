@@ -4,7 +4,6 @@ require 'bundler/setup'
 require 'prawn'
 require 'prawn/measurement_extensions'
 
-card = '/home/helge/Documents/Netrunner/Cards/12 - Red Sand/06 - Crimson Dust/104 - Aumakua.jpg'
 FILE_NAME = 'netrunner-proxies.pdf'
 
 PAGE_SIZE = 'A4'
@@ -14,6 +13,8 @@ CARD_WIDTH = 63.5.mm
 CARD_HEIGHT = 88.9.mm
 X_GAP = (PAGE_WIDTH - 3 * CARD_WIDTH) / 4
 Y_GAP = (PAGE_HEIGHT - 3 * CARD_HEIGHT) / 4
+
+cards = $stdin.each_line.map(&:strip)
 
 def positions
   Enumerator.new do |out|
@@ -32,7 +33,8 @@ Prawn::Document.generate(
   page_size: PAGE_SIZE
 ) do |pdf|
   p = positions
-  9.times do
+  cards.each.with_index do |card, i|
+    p = positions if i % 9 == 0
     pdf.image(
       card,
       at: p.next,
