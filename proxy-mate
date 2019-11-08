@@ -21,7 +21,7 @@ def positions
   Enumerator.new do |out|
     CARDS_PER_PAGE.times do |n|
       x = X_GAP + (n % 3) * (CARD_WIDTH + X_GAP)
-      y = (n / 3 + 1) * (CARD_HEIGHT + Y_GAP)
+      y = PAGE_HEIGHT - Y_GAP - (n / 3) * (CARD_HEIGHT + Y_GAP)
       out << [x, y]
     end
   end
