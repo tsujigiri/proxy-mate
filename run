@@ -4,7 +4,7 @@ require 'bundler/setup'
 require 'prawn'
 require 'prawn/measurement_extensions'
 
-FILE_NAME = 'netrunner-proxies.pdf'
+FILE_NAME = 'proxies.pdf'
 
 PAGE_SIZE = 'A4'
 PAGE_WIDTH = 210.mm
