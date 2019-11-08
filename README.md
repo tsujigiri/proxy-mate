@@ -18,7 +18,7 @@ It takes a list of image files as input on stdin. So you can, for example,
 create a file with one full file path per line and run it like this:
 
 ```
-cat my-cards.txt | ./proxy-mate
+cat my-netrunner-deck.txt | ./proxy-mate
 ```
 
 It should then have created a file named `proxies.pdf`. The images can be any
