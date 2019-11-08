@@ -13,12 +13,13 @@ CARD_WIDTH = 63.5.mm
 CARD_HEIGHT = 88.9.mm
 X_GAP = (PAGE_WIDTH - 3 * CARD_WIDTH) / 4
 Y_GAP = (PAGE_HEIGHT - 3 * CARD_HEIGHT) / 4
+CARDS_PER_PAGE = 9
 
 cards = $stdin.each_line.map(&:strip)
 
 def positions
   Enumerator.new do |out|
-    9.times do |n|
+    CARDS_PER_PAGE.times do |n|
       x = X_GAP + (n % 3) * (CARD_WIDTH + X_GAP)
       y = (n / 3 + 1) * (CARD_HEIGHT + Y_GAP)
       out << [x, y]
@@ -34,7 +35,10 @@ Prawn::Document.generate(
 ) do |pdf|
   p = positions
   cards.each.with_index do |card, i|
-    p = positions if i % 9 == 0
+    if i % CARDS_PER_PAGE == 0
+      p = positions
+      pdf.start_new_page if i > 0
+    end
     pdf.image(
       card,
       at: p.next,
