@@ -33,7 +33,7 @@ Prawn::Document.generate(
   print_scaling: :none,
   page_size: PAGE_SIZE
 ) do |pdf|
-  p = positions
+  p = nil
   cards.each.with_index do |card, i|
     if i % CARDS_PER_PAGE == 0
       p = positions
