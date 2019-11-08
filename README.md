@@ -22,4 +22,5 @@ cat my-netrunner-deck.txt | ./proxy-mate
 ```
 
 It should then have created a file named `proxies.pdf`. The images can be any
-size and will be scaled to standard playing card size.
+size and will be scaled to standard playing card size. The tool is hard-coded
+to produce an A4 page size but should be easily adapted to other formats.
