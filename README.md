@@ -21,4 +21,5 @@ create a file with one full file path per line and run it like this:
 cat my-cards.txt | ./proxy-mate
 ```
 
-It should then have created a file named `proxies.pdf`.
+It should then have created a file named `proxies.pdf`. The images can be any
+size and will be scaled to standard playing card size.
