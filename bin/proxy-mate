@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'bundler/setup'
+require 'proxy_mate'
+
+ProxyMate.new(
+  File.open(ARGV[0]).each_line.map(&:strip).reject(&:empty?),
+  ARGV[1]
+).generate

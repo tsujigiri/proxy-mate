@@ -4,23 +4,22 @@ Generates a PDF with standard size playing cards of your choice.
 
 ## Installation
 
-Ruby and the `bundler` gem need to be installed, then run:
+Given that you have a recent Ruby version installed, run:
 
 ```
-git clone https://github.com/tsujigiri/proxy-mate.git
-cd proxy-mate
-bundle
+gem install proxy-mate
 ```
+
+In order for you to be able to run the executable, Ruby's `bin` directory needs to be in your `PATH`.
 
 ## Usage
 
-It takes a list of image files as input on stdin. So you can, for example,
-create a file with one full file path per line and run it like this:
+First, you need the actual images of the cards you want. Create a text file with the full path of an image file of a card per line, then run:
 
 ```
-cat my-netrunner-deck.txt | ./proxy-mate
+proxy-mate my-netrunner-deck.txt proxies.pdf
 ```
 
-It should then have created a file named `proxies.pdf`. The images can be any
-size and will be scaled to standard playing card size. The tool is hard-coded
-to produce an A4 page size but should be easily adapted to other formats.
+The images can be any size and will be scaled to standard playing card size.
+The tool is hard-coded to produce an A4 page size but should be easily adapted
+to other formats.
