@@ -20,6 +20,6 @@ First, you need the actual images of the cards you want. Create a text file with
 proxy-mate my-netrunner-deck.txt proxies.pdf
 ```
 
-The images can be any size and will be scaled to standard playing card size.
-The tool is hard-coded to produce an A4 page size but should be easily adapted
-to other formats.
+This creates a file named `proxies.pdf`. The images can be any size and will be
+scaled to standard playing card size. The tool is hard-coded to produce an A4
+page size but should be easily adapted to other formats.
